@@ -8,7 +8,8 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk", 
+	"prepare": "./node_modules/.bin/esbuild lambda/healthCheck.js --bundle --platform=node --target=node16 --external:aws-sdk --outfile=lambda/build/healthCheck/index.js"
   },
   "devDependencies": {
     "@types/jest": "^29.2.4",
@@ -22,6 +23,8 @@
   "dependencies": {
     "aws-cdk-lib": "2.55.1",
     "constructs": "^10.0.0",
+    "esbuild": "0.16.10",
+    "health-checker-aws": "1.0.8",
     "source-map-support": "^0.5.21"
   }
 }
