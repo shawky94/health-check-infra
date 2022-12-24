@@ -13,5 +13,12 @@ export class DbStack extends cdk.Stack {
       tableName: "healthCheck",
       replicationRegions: ["us-east-1", "us-west-1"],
     });
+
+    new dynamodb.Table(this, "Table2", {
+      partitionKey: { name: "url", type: dynamodb.AttributeType.STRING },
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      tableName: "checkUrl",
+      replicationRegions: ["us-east-1", "us-west-1"],
+    });
   }
 }
