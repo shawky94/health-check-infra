@@ -3,11 +3,7 @@ import "source-map-support/register";
 import * as cdk from "aws-cdk-lib";
 import { DbStack } from "../lib/db-stack";
 import { LambdaStack } from "../lib/lambda-stack";
-
-// config
-const regions = ["us-west-1", "us-east-1"];
-const mainRegion = "us-east-1";
-////////
+import { regions, mainRegion } from "../configs";
 
 const runInMultipleRegions = regions.length > 1 ? "true" : "false";
 
