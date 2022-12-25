@@ -9,21 +9,21 @@ export class DbStack extends cdk.Stack {
     new dynamodb.Table(this, "healthCheck-global", {
       partitionKey: { name: "checkUrl", type: dynamodb.AttributeType.STRING },
       sortKey: { name: "checkTimestamp", type: dynamodb.AttributeType.NUMBER },
-      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      removalPolicy: cdk.RemovalPolicy.RETAIN,
       tableName: "healthCheck",
       replicationRegions: ["us-east-1", "us-west-1"],
     });
 
     new dynamodb.Table(this, "checkUrl-global", {
       partitionKey: { name: "url", type: dynamodb.AttributeType.STRING },
-      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      removalPolicy: cdk.RemovalPolicy.RETAIN,
       tableName: "checkUrl",
       replicationRegions: ["us-east-1", "us-west-1"],
     });
 
     new dynamodb.Table(this, "admin-global", {
       partitionKey: { name: "adminEmail", type: dynamodb.AttributeType.STRING },
-      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      removalPolicy: cdk.RemovalPolicy.RETAIN,
       tableName: "admin",
       replicationRegions: ["us-east-1", "us-west-1"],
     });
