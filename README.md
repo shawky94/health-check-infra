@@ -26,11 +26,14 @@ const mainRegion = "us-east-1";
 
 ## Note
 
-Make sure you run bootstrap command in the region you are deploying to (if not run before)
+- Make sure you run bootstrap command in the region you are deploying to (if not run before)
 
 ```
 cdk bootstrap aws://ACCOUNT-NUMBER-1/REGION-1
 ```
+
+- Populate `admin` table with admin emails.
+- Populate `checkUrl` table with urls to check.
 
 ## Useful commands
 
