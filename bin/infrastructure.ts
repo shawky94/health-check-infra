@@ -5,7 +5,7 @@ import { DbStack } from "../lib/db-stack";
 import { LambdaStack } from "../lib/lambda-stack";
 
 // config
-const regions = ["us-east-1", "us-west-1"];
+const regions = ["us-west-1", "us-east-1"];
 const mainRegion = "us-east-1";
 ////////
 
@@ -24,7 +24,7 @@ regions.forEach((region) => {
     mainRegion,
     {
       env: {
-        region: region,
+        region,
       },
     }
   );
